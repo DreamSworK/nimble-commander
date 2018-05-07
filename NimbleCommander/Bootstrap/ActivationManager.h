@@ -84,10 +84,15 @@ private:
     #error Invalid build configuration - no version type specified
 #endif
 
-    bool    m_IsActivated = false;
-    bool    m_UserHadRegistered = false;
+    bool    m_IsActivated = true;
+    bool    m_UserHadRegistered = true;
     int     m_TrialDaysLeft = 0;
     bool    m_IsTrialPeriod = false;
     bool    m_UserHasProVersionInstalled = false;
-    unordered_map<string, string> m_LicenseInfo;
+    unordered_map<string, string> m_LicenseInfo = {
+            {"Company", "Dreams"},
+            {"Name", "Sergio Dreams"},
+            {"Email", "sergiodreamswork@gmail.com"},
+            {"Product", "Nimble Commander Pro"}
+    };
 };

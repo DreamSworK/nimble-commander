@@ -3368,8 +3368,8 @@
 						ProvisioningStyle = Manual;
 					};
 					CFC5121016C4BD3D00D247EE = {
-						DevelopmentTeam = AC5SJT236H;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = J4HGHWR57Q;
+						ProvisioningStyle = Automatic;
 					};
 					CFF6F2391A13567C00011177 = {
 						DevelopmentTeam = AC5SJT236H;
@@ -5359,9 +5359,9 @@
 		CFC5122F16C4BD3D00D247EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)_NonMAS_Trial";
-				DEVELOPMENT_TEAM = AC5SJT236H;
+				DEVELOPMENT_TEAM = J4HGHWR57Q;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"__NC_VERSION_TRIAL__=1",
@@ -5369,17 +5369,17 @@
 				INFOPLIST_FILE = "NimbleCommander/Resources/NimbleCommander-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = info.filesmanager.Files;
 				PRODUCT_NAME = "Nimble Commander";
-				PROVISIONING_PROFILE = "7305d5ad-6123-4d75-ba47-7756710e2edf";
-				PROVISIONING_PROFILE_SPECIFIER = "XC OSX: info.filesmanager.Files Developer ID";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		CFC5123016C4BD3D00D247EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)_NonMAS_Trial";
-				DEVELOPMENT_TEAM = AC5SJT236H;
+				DEVELOPMENT_TEAM = J4HGHWR57Q;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"__NC_VERSION_TRIAL__=1",
@@ -5387,8 +5387,8 @@
 				INFOPLIST_FILE = "NimbleCommander/Resources/NimbleCommander-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = info.filesmanager.Files;
 				PRODUCT_NAME = "Nimble Commander";
-				PROVISIONING_PROFILE = "7305d5ad-6123-4d75-ba47-7756710e2edf";
-				PROVISIONING_PROFILE_SPECIFIER = "XC OSX: info.filesmanager.Files Developer ID";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

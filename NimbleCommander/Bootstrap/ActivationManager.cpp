@@ -162,42 +162,8 @@ ActivationManager &ActivationManager::Instance()
 
 ActivationManager::ActivationManager()
 {
-    if( m_Type == Distribution::Paid ) {
-        m_IsActivated = true;
-    }
-    else if( m_Type == Distribution::Trial ) {
-        const bool has_mas_paid_version = UserHasPaidVersionInstalled();
-        if(has_mas_paid_version)
-            GA().PostEvent("Licensing", "Activated Startup", "MAS Installed");
-        const bool has_valid_license = UserHasValidAquaticLicense();
-        if( has_valid_license ) {
-            m_LicenseInfo = GetAquaticLicenseInfo( InstalledAquaticLicensePath() );
-            GA().PostEvent("Licensing", "Activated Startup", "License Installed");
-        }
-        
-        m_UserHadRegistered = has_mas_paid_version || has_valid_license;
-        m_UserHasProVersionInstalled = has_mas_paid_version;
-        m_IsActivated = true /*has_mas_paid_version || has_valid_license*/;
-        
-        if( !m_UserHadRegistered ) {
-            if( !TrialStarted() )
-                SetupTrialPeriod();
-
-            m_TrialDaysLeft = ::TrialDaysLeft();
-            
-            if( m_TrialDaysLeft > 0 ) {
-                m_IsTrialPeriod = true;
-                GA().PostEvent("Licensing", "Trial Startup", "Trial valid", m_TrialDaysLeft);
-            }
-            else {
-                GA().PostEvent("Licensing", "Trial Startup", "Trial exceeded", -m_TrialDaysLeft);
-                m_IsTrialPeriod = false;
-            }
-        }
-    }
-    else { // m_Type == Distribution::Free
-        m_IsActivated = AppStoreReceiptContainsProFeaturesInApp();
-    }
+    GA().PostEvent("Licensing", "Activated Startup", "MAS Installed");
+    GA().PostEvent("Licensing", "Activated Startup", "License Installed");
 }
 
 const string& ActivationManager::BundleID()
@@ -397,8 +363,7 @@ bool ActivationManager::ReCheckProFeaturesInAppPurchased()
 
 bool ActivationManager::UsedHadPurchasedProFeatures() const noexcept
 {
-    return Type() == Distribution::Free &&
-           m_IsActivated == true;
+    return Type() == Distribution::Free && m_IsActivated;
 }
 
 const unordered_map<string, string> &ActivationManager::LicenseInformation() const noexcept
